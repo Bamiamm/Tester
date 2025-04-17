@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mocha Tests</title>
+    <!-- Add Mocha CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.css">
+    <!-- Add Mocha and Chai JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.3.2/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.4/chai.js"></script>
+</head>
+<body>
+    <!-- Mocha test results will appear here -->
+    <div id="mocha"></div>
+
+    <script>
+        // Setup Mocha
+        mocha.setup('tdd');
+        const assert = chai.assert;
+
+        // Your test code
+        suite('Unit Tests', function () {
+            suite('Basic Assertions', function () {
+                // #1
+                test('#isNull, #isNotNull', function () {
+                    assert.isNull(null, 'This is an optional error description - e.g. null is null');
+                    assert.isNotNull(1, '1 is not null');
+                });
+            });
+        });
+
+        // Run the tests
+        mocha.run();
+    </script>
+</body>
+</html>
